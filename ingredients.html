@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Ingredients</title>
+    <link rel="stylesheet" href="rb.css">
+    <!--
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    -->
+</head>
+<body>
+    <header>
+        <h1>My Recipe Book</h1>
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="rb.html">Recipes</a>
+            <a href="ingredients.html">Ingredients</a>
+            <a href="login.html">Login</a> <!-- New Login Link -->
+        </nav>        
+    </header>
+
+    <main>
+        <section id="ingredients" class="ingredients-section">
+            <h2>Select Ingredients</h2>
+
+            <div class="search-button-container">
+                <img src="search-icon.jpg" alt="Search" class="search-btn" onclick="searchRecipes()">
+            </div>
+
+            <div class="ingredients-container">
+                <!-- Vegetables -->
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="tomato.jpg" alt="Tomato">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="onion.jpg" alt="Onion">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="garlic.jpg" alt="Garlic">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="carrot.jpg" alt="Carrot">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="broccoli.jpg" alt="Broccoli">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+
+                <!-- Fruits -->
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="apple.jpg" alt="Apple">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="banana.jpg" alt="Banana">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="lemon.jpg" alt="Lemon">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="orange.jpg" alt="Orange">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+
+                <!-- Meats -->
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="chicken.jpg" alt="Chicken">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="beef.jpg" alt="Beef">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="fish.jpg" alt="Fish">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="pork.jpg" alt="Pork">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+
+                <!-- Spices -->
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="pepper.jpg" alt="Pepper">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="cumin.jpg" alt="Cumin">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="paprika.jpg" alt="Paprika">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="turmeric.jpg" alt="Turmeric">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+
+                <!-- Dairy -->
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="cheese.jpg" alt="Cheese">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="milk.jpg" alt="Milk">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="butter.jpg" alt="Butter">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+                <div class="ingredient-card" onclick="toggleSelect(this)">
+                    <img src="yogurt.jpg" alt="Yogurt">
+                    <span class="tick-mark">&#10003;</span>
+                </div>
+
+                <!-- Add more ingredient cards as needed -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="ingredients.js"></script>
+</body>
+</html>

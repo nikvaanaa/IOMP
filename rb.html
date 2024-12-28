@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+    <link rel="stylesheet" href="rb.css">
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+</head>
+<body>
+    <header>
+        <h1>My Recipe Book</h1>
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="rb.html">Recipes</a>
+            <a href="ingredients.html">Ingredients</a>
+            <a href="login.html">Login</a> <!-- New Login Link -->
+        </nav>        
+        <input type="text" id="searchBar" placeholder="Search Recipes..." onkeyup="searchRecipes()">
+    </header>    
+
+    <main>
+
+        <section id="featured" class="featured-section">
+            <h2>Featured Recipes</h2>
+            <div class="recipe-container">
+                <div class="recipe-card">
+                    <img src="spaghetti_carbonara.jpg" alt="Spaghetti Carbonara">
+                    <h3>Spaghetti Carbonara</h3>
+                    <p>Creamy spaghetti with eggs, pancetta, Parmesan cheese, and black pepper.</p>
+                    <a href="carbonara.html">
+                        <button class="recipe-btn">View Recipe</button>
+                    </a>
+                </div>                
+                <div class="recipe-card">
+                    <img src="stirfry.jpg" alt="Recipe 2">
+                    <h3>Chicken Curry</h3>
+                    <p>A flavorful and spicy Indian curry made with tender chicken pieces.</p>
+                    <button class="recipe-btn">View Recipe</button>
+                </div>
+                <div class="recipe-card">
+                    <img src="LavaCake.jpg" alt="Recipe 3">
+                    <h3>Chocolate Lava Cake</h3>
+                    <p>A rich and decadent dessert with a gooey, molten chocolate center.</p>
+                    <button class="recipe-btn">View Recipe</button>
+                </div>
+                <div class="recipe-card">
+                    <img src="CaesarSalad.jpg" alt="Recipe 4">
+                    <h3>Caesar Salad</h3>
+                    <p>A fresh and crunchy salad with romaine lettuce, croutons, and Caesar dressing.</p>
+                    <button class="recipe-btn">View Recipe</button>
+                </div>
+            </div>
+        </section>
+    
+        <section id="cuisines" class="cuisines-section">
+            <h2>Cuisines</h2>
+            <div class="cuisine-container">
+                <!-- Cuisine Card 1 -->
+                <div class="cuisine-card">
+                    <img src="italian.jpg" alt="Italian Cuisine">
+                    <h3>Italian</h3>
+                    <p>Pasta, pizza, and more – explore the rich flavors of Italy.</p>
+                </div>
+        
+                <!-- Cuisine Card 2 -->
+                <div class="cuisine-card">
+                    <img src="mexican.jpg" alt="Mexican Cuisine">
+                    <h3>Mexican</h3>
+                    <p>Spice up your meals with tacos, enchiladas, and more.</p>
+                </div>
+        
+                <!-- Cuisine Card 3 -->
+                <div class="cuisine-card">
+                    <img src="indian.jpg" alt="Indian Cuisine">
+                    <h3>Indian</h3>
+                    <p>Enjoy the bold and aromatic flavors of India.</p>
+                </div>
+        
+                <!-- Cuisine Card 4 -->
+                <div class="cuisine-card">
+                    <img src="japanese.jpg" alt="Japanese Cuisine">
+                    <h3>Japanese</h3>
+                    <p>Savor the delicate and refined tastes of Japanese cuisine.</p>
+                </div>
+        
+                <!-- Cuisine Card 5 -->
+                <div class="cuisine-card">
+                    <img src="french.jpg" alt="French Cuisine">
+                    <h3>French</h3>
+                    <p>Indulge in the elegance and sophistication of French cooking.</p>
+                </div>
+        
+                <!-- Cuisine Card 6 -->
+                <div class="cuisine-card">
+                    <img src="chinese.jpg" alt="Chinese Cuisine">
+                    <h3>Chinese</h3>
+                    <p>Discover the rich and diverse flavors of Chinese cuisine.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mealTypes" class="meal-types-section">
+            <h2>Meal Types</h2>
+            <div class="meal-type-container">
+                <a href="breakfast.html" class="meal-type-card">
+                    <img src="breakfast.jpg" alt="Breakfast">
+                    <h3>Breakfast</h3>
+                </a>
+                <a href="lunch.html" class="meal-type-card">
+                    <img src="lunch.jpg" alt="Lunch">
+                    <h3>Lunch</h3>
+                </a>
+                <a href="dinner.html" class="meal-type-card">
+                    <img src="dinner.jpg" alt="Dinner">
+                    <h3>Dinner</h3>
+                </a>
+                <a href="desserts.html" class="meal-type-card">
+                    <img src="desserts.jpg" alt="Desserts">
+                    <h3>Desserts</h3>
+                </a>
+                <a href="brunch.html" class="meal-type-card">
+                    <img src="brunch.jpg" alt="Brunch">
+                    <h3>Brunch</h3>
+                </a>
+                <a href="snacks.html" class="meal-type-card">
+                    <img src="snacks.jpg" alt="Snacks">
+                    <h3>Snacks</h3>
+                </a>
+            </div>
+        </section>               
+        
+        <!-- <div class="recipe-container" id="recipeContainer">
+            <div class="recipe-card" id="recipe1">
+                <h2>Spaghetti Carbonara</h2>
+                <img src="carbonara.jpg" alt="Spaghetti Carbonara">
+                <div class="recipe-content">
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <li>200g Spaghetti</li>
+                        <li>100g Pancetta</li>
+                        <li>2 large eggs</li>
+                        <li>50g Parmesan cheese</li>
+                        <li>2 cloves garlic</li>
+                        <li>Salt and pepper</li>
+                    </ul>
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>Cook the spaghetti according to the package instructions.</li>
+                        <li>Fry the pancetta and garlic in a pan until crispy.</li>
+                        <li>Beat the eggs and mix with grated Parmesan.</li>
+                        <li>Drain the pasta and add it to the pancetta, then remove from heat.</li>
+                        <li>Stir in the egg and cheese mixture quickly to create a creamy sauce.</li>
+                        <li>Season with salt and pepper to taste, and serve immediately.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-card" id="recipe2">
+                <h2>Chicken Stir Fry</h2>
+                <img src="stirfry.jpg" alt="Chicken Stir Fry">
+                <div class="recipe-content">
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <li>300g Chicken breast</li>
+                        <li>1 bell pepper</li>
+                        <li>1 onion</li>
+                        <li>2 cloves garlic</li>
+                        <li>2 tablespoons soy sauce</li>
+                        <li>1 tablespoon olive oil</li>
+                        <li>Salt and pepper</li>
+                        <li>Rice or noodles (for serving)</li>
+                    </ul>
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>Slice the chicken into thin strips.</li>
+                        <li>Heat the olive oil in a pan over medium-high heat.</li>
+                        <li>Add the chicken and cook until browned.</li>
+                        <li>Add the sliced bell pepper, onion, and garlic, and stir-fry until tender.</li>
+                        <li>Stir in the soy sauce and cook for another 2 minutes.</li>
+                        <li>Season with salt and pepper, and serve with rice or noodles.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-card" id="recipe3">
+                <h2>Vegetable Curry</h2>
+                <img src="curry.jpg" alt="Vegetable Curry">
+                <div class="recipe-content">
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <li>1 onion</li>
+                        <li>2 cloves garlic</li>
+                        <li>1 tablespoon curry powder</li>
+                        <li>1 can coconut milk</li>
+                        <li>1 sweet potato</li>
+                        <li>1 bell pepper</li>
+                        <li>1 zucchini</li>
+                        <li>1 cup chickpeas</li>
+                        <li>Salt and pepper</li>
+                    </ul>
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>Chop all vegetables into bite-sized pieces.</li>
+                        <li>Fry the onion and garlic until soft.</li>
+                        <li>Add the curry powder and fry for another minute.</li>
+                        <li>Add the coconut milk, sweet potato, and bell pepper. Simmer until tender.</li>
+                        <li>Add the zucchini and chickpeas, and cook for another 5 minutes.</li>
+                        <li>Season with salt and pepper, and serve with rice.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-card" id="recipe4">
+                <h2>Tacos</h2>
+                <img src="tacos.jpg" alt="Tacos">
+                <div class="recipe-content">
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <li>300g meat</li>
+                        <li>1 onion</li>
+                        <li>2 cloves garlic</li>
+                        <li>1 tablespoon taco seasoning</li>
+                        <li>8 taco shells</li>
+                        <li>1 cup shredded lettuce</li>
+                        <li>1 tomato</li>
+                        <li>1/2 cup shredded cheese</li>
+                        <li>Sour cream (optional)</li>
+                    </ul>
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>Brown the ground beef in a pan with chopped onion and garlic.</li>
+                        <li>Add taco seasoning and a splash of water. Simmer for 5 minutes.</li>
+                        <li>Heat the taco shells according to package instructions.</li>
+                        <li>Fill each shell with beef, lettuce, tomato, and cheese.</li>
+                        <li>Add sour cream if desired, and serve immediately.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-card" id="recipe5">
+                <h2>Margherita Pizza</h2>
+                <img src="pizza.jpg" alt="Margherita Pizza">
+                <div class="recipe-content">
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <li>1 pizza dough</li>
+                        <li>1/2 cup tomato sauce</li>
+                        <li>200g mozzarella cheese</li>
+                        <li>Fresh basil leaves</li>
+                        <li>Olive oil</li>
+                        <li>Salt and pepper</li>
+                    </ul>
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>Preheat oven to 220°C (425°F).</li>
+                        <li>Roll out the pizza dough on a floured surface.</li>
+                        <li>Spread tomato sauce over the dough.</li>
+                        <li>Top with sliced mozzarella and fresh basil leaves.</li>
+                        <li>Drizzle with olive oil and season with salt and pepper.</li>
+                        <li>Bake for 10-12 minutes or until the crust is golden and the cheese is bubbly.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-card" id="recipe6">
+                <h2>Pancakes</h2>
+                <img src="pancakes.jpg" alt="Pancakes">
+                <div class="recipe-content">
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <li>1 cup all-purpose flour</li>
+                        <li>2 tablespoons sugar</li>
+                        <li>1 teaspoon baking powder</li>
+                        <li>1/2 teaspoon baking soda</li>
+                        <li>1/4 teaspoon salt</li>
+                        <li>1 cup buttermilk</li>
+                        <li>1 large egg</li>
+                        <li>2 tablespoons melted butter</li>
+                        <li>Butter or oil for cooking</li>
+                    </ul>
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>In a large bowl, whisk together the flour, sugar, baking powder, baking soda, and salt.</li>
+                        <li>In another bowl, whisk together the buttermilk, egg, and melted butter.</li>
+                        <li>Pour the wet ingredients into the dry ingredients and stir until just combined.</li>
+                        <li>Heat a non-stick pan over medium heat and lightly grease with butter or oil.</li>
+                        <li>Pour 1/4 cup of batter onto the pan for each pancake.</li>
+                        <li>Cook until bubbles form on the surface, then flip and cook until golden brown.</li>
+                        <li>Serve warm with syrup or your favorite toppings.</li>
+                    </ol>
+                </div>
+            </div>
+        </div> -->
+    </main>
+
+    <!-- <footer>
+        <p>&copy; 2024 My Recipe Book</p>
+    </footer> -->
+
+    <script src="rb.js"></script>
+</body>
+</html>

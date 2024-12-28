@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="rb.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Profile</h1>
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="rb.html">Recipes</a>
+            <a href="ingredients.html">Ingredients</a>
+            <a href="/logout" class="logout-link">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-section">
+            <div class="profile-card">
+                <!-- Profile Picture -->
+                <div class="profile-pic-container">
+                    <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+                </div>
+
+                <!-- User Information -->
+                <div class="profile-info">
+                    <h2>Hi, Testuser</h2>
+                    <!-- <p><strong>Email:</strong> johndoe@example.com</p> -->
+                    <p><strong>Member Since:</strong> January 2024</p>
+
+                    <!-- Edit Profile Button -->
+                    <button class="edit-profile-btn">Edit Profile</button>
+                </div>
+            </div>
+
+            <!-- User Likes and Comments Section -->
+            <div class="user-interactions">
+                <div class="likes-section">
+                    <h3>Liked Recipes</h3>
+                    <ul>
+                        <li><a href="recipe1.html">Tomato Soup</a></li>
+                        <li><a href="recipe2.html">Chicken Curry</a></li>
+                        <li><a href="recipe3.html">Apple Pie</a></li>
+                    </ul>
+                </div>
+                <div class="comments-section">
+                    <h3>Your Comments</h3>
+                    <ul>
+                        <li><strong>On Tomato Soup:</strong> "Absolutely delicious!"</li>
+                        <li><strong>On Chicken Curry:</strong> "A bit spicy but flavorful."</li>
+                        <li><strong>On Apple Pie:</strong> "Best dessert I've had in a while."</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Profile Actions
+            <div class="profile-actions">
+                <button class="action-btn">Change Password</button>
+                <button class="action-btn" onclick="window.location.href='/logout';">Logout</button>
+            </div> -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Recipe Book</p>
+    </footer>
+
+    <script src="rb.js"></script>
+</body>
+</html>

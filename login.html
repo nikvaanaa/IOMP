@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="rb.css">
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="rb.html">Recipes</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="login-section">
+            <form id="login-form" action="login" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+            <p id="error-message" style="color: red;"></p>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Mock login check (replace with actual authentication code)
+            if (username === 'testuser' && password === 'password123') {
+                window.location.href = 'profile.html'; // Redirect to profile on success
+            } else {
+                document.getElementById('error-message').textContent = 'Invalid login credentials. Please try again.';
+            }
+        });
+    </script>
+</body>
+</html>
