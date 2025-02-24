@@ -5,15 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <link rel="stylesheet" href="rb.css">
+    <!-- <style>/* General Page Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background-color: #d86a8f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            flex-direction: column; /* Ensure everything is stacked */
+            align-items: center;
+            width: 100%;
+        }
+        
+
+        /* Stacked Containers */
+        .user-interactions {
+            display: flex;
+            flex-direction: column; /* Stack each section below */
+            width: 100%;
+        }
+        
+        /* Individual Sections (Liked Recipes, Comments, Additional Info) */
+        .likes-section,
+        .comments-section,
+        .additional-info {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin-bottom: 20px; /* Space between each container */
+        }
+        
+        /* Section Headers */
+        .likes-section h3,
+        .comments-section h3,
+        .additional-info h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #d86a8f;
+            padding-bottom: 5px;
+        }
+        
+        /* Lists */
+        .likes-section ul,
+        .comments-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .likes-section li,
+        .comments-section li {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .likes-section li:last-child,
+        .comments-section li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Additional Info (Allergies & Favorite Recipes) */
+        .additional-info p {
+            font-size: 16px;
+            color: #666;
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            main {
+                padding: 20px;
+            }
+        
+            .profile-info h2 {
+                font-size: 22px;
+            }
+        
+            .likes-section h3,
+            .comments-section h3,
+            .additional-info h3 {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header {
+                padding: 10px;
+            }
+        
+            nav a {
+                padding: 8px 12px;
+            }
+        }
+    </style> -->
 </head>
 <body>
     <header>
-        <h1>Welcome to Your Profile</h1>
+        <h1>Profile</h1>
         <nav>
             <a href="homepage.html">Home</a>
             <a href="rb.html">Recipes</a>
             <a href="ingredients.html">Ingredients</a>
-            <a href="/logout" class="logout-link">Logout</a>
+            <a href="login.html" class="logout-link" onclick="window.location.href='login.html';">Logout</a>
         </nav>
     </header>
 
@@ -22,25 +153,24 @@
             <div class="profile-card">
                 <!-- Profile Picture -->
                 <div class="profile-pic-container">
-                    <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+                    <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic" id="profile-pic">
                 </div>
 
                 <!-- User Information -->
                 <div class="profile-info">
-                    <h2>Hi, Testuser</h2>
-                    <!-- <p><strong>Email:</strong> johndoe@example.com</p> -->
-                    <p><strong>Member Since:</strong> January 2024</p>
+                    <h2 id="username">Hi, User</h2> <!-- Dynamically updated -->
+                    <p><strong>Member Since:</strong> <span id="member-since">January 2024</span></p>
 
                     <!-- Edit Profile Button -->
-                    <button class="edit-profile-btn">Edit Profile</button>
+                    <button class="edit-profile-btn" onclick="window.location.href='profileEdit.html';">Edit Profile</button>
                 </div>
             </div>
 
-            <!-- User Likes and Comments Section -->
+            <!-- User Interactions -->
             <div class="user-interactions">
                 <div class="likes-section">
                     <h3>Liked Recipes</h3>
-                    <ul>
+                    <ul id="liked-recipes">
                         <li><a href="recipe1.html">Tomato Soup</a></li>
                         <li><a href="recipe2.html">Chicken Curry</a></li>
                         <li><a href="recipe3.html">Apple Pie</a></li>
@@ -48,19 +178,22 @@
                 </div>
                 <div class="comments-section">
                     <h3>Your Comments</h3>
-                    <ul>
+                    <ul id="user-comments">
                         <li><strong>On Tomato Soup:</strong> "Absolutely delicious!"</li>
                         <li><strong>On Chicken Curry:</strong> "A bit spicy but flavorful."</li>
                         <li><strong>On Apple Pie:</strong> "Best dessert I've had in a while."</li>
                     </ul>
                 </div>
-            </div>
 
-            <!-- Profile Actions
-            <div class="profile-actions">
-                <button class="action-btn">Change Password</button>
-                <button class="action-btn" onclick="window.location.href='/logout';">Logout</button>
-            </div> -->
+                <!-- User Allergies and Favorite Recipes -->
+                <div class="additional-info">
+                    <h3>Allergies</h3>
+                    <p id="allergies">None</p>
+
+                    <h3>Favorite Recipes</h3>
+                    <p id="favorite-recipes">Tomato Soup, Chicken Curry</p>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -68,6 +201,63 @@
         <p>&copy; 2024 My Recipe Book</p>
     </footer>
 
-    <script src="rb.js"></script>
+    <script>
+        // Check if user is logged in
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const username = localStorage.getItem('username');
+        const email = localStorage.getItem('email');
+        const feedbacks = localStorage.getItem('feedbacks');
+        const allergies = localStorage.getItem('allergies');
+        const favoriteRecipes = localStorage.getItem('favoriteRecipes');
+        const likedRecipes = localStorage.getItem('likedRecipes');
+        
+
+        if (isLoggedIn === 'true') {
+            // Update the profile page dynamically
+            document.querySelector('#username').textContent = `Hi, ${username}`;
+            document.querySelector('#email').textContent = email;
+            document.querySelector('#member-since').textContent = "January 2024"; // Replace with dynamic date if needed
+            document.querySelector('#allergies').textContent = allergies || "None";
+            document.querySelector('#favorite-recipes').textContent = favoriteRecipes || "None";
+
+            // Update liked recipes
+            const likedRecipesList = document.querySelector('#liked-recipes');
+            if (likedRecipes) {
+                const recipes = likedRecipes.split(','); // Assuming the recipes are stored as comma-separated values
+                likedRecipesList.innerHTML = ''; // Clear the current list
+                recipes.forEach(recipe => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<a href="#">${recipe}</a>`; // Link placeholder
+                    likedRecipesList.appendChild(listItem);
+                });
+            }
+
+            // Update user comments section dynamically
+            const userCommentsList = document.querySelector('#user-comments');
+            if (feedbacks) {
+                const comments = feedbacks.split(','); // Assuming feedbacks are stored as comma-separated values
+                userCommentsList.innerHTML = ''; // Clear the current list
+                comments.forEach(comment => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = comment;
+                    userCommentsList.appendChild(listItem);
+                });
+            }
+            } else {
+            // Redirect to login page if not logged in
+                window.location.href = 'login.html';
+            }
+            document.querySelector('.logout-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                localStorage.clear(); // Clear session data
+                sessionStorage.clear(); // Clear session storage if used
+                document.cookie.split(";").forEach((c) => { 
+                    document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+                });
+                window.location.replace('login.html'); // Redirect to login page
+            });
+
+          
+    </script>
 </body>
 </html>

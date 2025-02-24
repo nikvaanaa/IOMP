@@ -12,13 +12,13 @@
         <nav>
             <a href="homepage.html">Home</a>
             <a href="rb.html">Recipes</a>
-            <a href="login.html">Login</a>
+            <a href="ingredients.html">Ingredients</a>
         </nav>
-    </header>
+    </header>    
 
     <main>
         <section id="login-section">
-            <form id="login-form" action="login" method="POST">
+            <form id="login-form">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
                 
@@ -32,19 +32,29 @@
     </main>
 
     <script>
-        document.getElementById('login-form').addEventListener('submit', function(e) {
+        document.getElementById('login-form').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
             // Mock login check (replace with actual authentication code)
             if (username === 'testuser' && password === 'password123') {
-                window.location.href = 'profile.html'; // Redirect to profile on success
+                // Save user login info in localStorage
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('username', username);
+
+                // Redirect to profile page
+                window.location.href = 'profile.html';
             } else {
                 document.getElementById('error-message').textContent = 'Invalid login credentials. Please try again.';
             }
         });
+
+        // Redirect to profile page if already logged in
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+            window.location.href = 'profile.html';
+        }
     </script>
 </body>
 </html>
